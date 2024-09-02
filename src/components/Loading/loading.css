@@ -1,0 +1,16 @@
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 9px solid;
+    border-color: #b6b6b648;
+    border-right-color: #ffffff;
+    animation: spinner-d3wgkg 1s infinite linear;
+    position: absolute;
+ }
+ 
+ @keyframes spinner-d3wgkg {
+    to {
+       transform: rotate(1turn);
+    }
+ }

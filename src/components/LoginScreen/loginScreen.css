@@ -1,0 +1,44 @@
+
+.loginBack {
+    background-color: #313233;
+    background-image: url(https://media.cntraveler.com/photos/5eb18e42fc043ed5d9779733/16:9/w_4288,h_2412,c_limit/BlackForest-Germany-GettyImages-147180370.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+}
+
+.login {
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all linear .3s;
+}
+
+.profileImage {
+    height: 150px;
+    width: 150px;
+    background-color: #4646a3;
+    filter: drop-shadow(10px black);
+    align-content: center;
+    border-radius: 15px;
+    transition: linear .3s;
+}
+
+.user {
+    color: white;
+    font-family: sans-serif;
+}
+
+.password {
+    text-align: center;
+    font-size: x-large;
+    max-width: 10rem;
+    border-radius: 15px;
+    border: none;
+}
