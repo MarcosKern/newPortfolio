@@ -1,0 +1,18 @@
+.desktopScreen {
+    display: flex;
+    flex-direction: column;
+    background-color: #333333;
+    height: 100dvh;
+}
+
+.workArea {
+    flex: 1;
+    background-image:url(../../assets/layered-waves-haikei.svg);
+    background-size: cover;
+}
+
+.taskBar {
+    height: 3em;
+    background-color: #0000ff3a;
+}
+
