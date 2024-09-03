@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LoginScreen from './components/LoginScreen/LoginScreen';
-import Desktop from "./components/desktop/Desktop";
+import Desktop from "./components/Desktop/Desktop";
 import './App.css'
 
 function App() {

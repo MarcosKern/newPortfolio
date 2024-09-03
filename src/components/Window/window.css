@@ -1,0 +1,12 @@
+.windowHeader {
+    height: 2em;
+    background-color: aliceblue;
+}
+
+.Window {
+    position: relative;
+    border: 2px solid black;
+    height: 20em;
+    width: 40em;
+    background-color: antiquewhite;
+}

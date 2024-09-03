@@ -1,10 +1,11 @@
+import Window from "../Window/Window.tsx"
 import "./desktop.css"
 
-function Desktop() {
+export default function Desktop() {
   return(
     <section className="desktopScreen">
       <main className="workArea">
-
+        <Window />
       </main>
       <footer className="taskBar">
 
@@ -12,5 +13,3 @@ function Desktop() {
     </section>
   )
 }
-
-export default Desktop;
