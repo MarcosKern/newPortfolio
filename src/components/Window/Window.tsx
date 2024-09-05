@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./window.css"
+import dragImage from "../../assets/download.gif"
 
 export default function Window() {
   const [position, setPosition] = useState({ x: 450, y: 300 })
@@ -12,6 +13,7 @@ export default function Window() {
       })
     }
   }
+
   return(
     <section
       className="Window"
@@ -20,7 +22,8 @@ export default function Window() {
       <header
         className="windowHeader"
         onDrag={ ({pageX, pageY}) => redefinePosition(pageX, pageY) }
-        draggable>
+        draggable
+        >
 
       </header>
       <section>
@@ -36,4 +39,8 @@ export default function Window() {
       </footer>
     </section>
   )
+}
+
+function componentDidMount() {
+  throw new Error("Function not implemented.")
 }
