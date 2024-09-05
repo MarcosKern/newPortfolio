@@ -40,7 +40,3 @@ export default function Window() {
     </section>
   )
 }
-
-function componentDidMount() {
-  throw new Error("Function not implemented.")
-}
