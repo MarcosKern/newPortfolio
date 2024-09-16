@@ -1,0 +1,19 @@
+.taskbar {
+    height: 3em;
+    background-color: #0000ff3a;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.date {
+    height: 100%;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: sans-serif;
+    place-items: center;
+    justify-content: center;
+}

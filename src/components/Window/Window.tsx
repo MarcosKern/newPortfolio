@@ -1,6 +1,5 @@
 import { useState } from "react"
 import "./window.css"
-import dragImage from "../../assets/download.gif"
 
 export default function Window() {
   const [position, setPosition] = useState({ x: 450, y: 300 })
