@@ -20,10 +20,10 @@ export default function Window() {
       style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>
       <header
         className="windowHeader"
-        onDrag={ ({pageX, pageY}) => redefinePosition(pageX, pageY) }
+        onDrag={ ({clientX, clientY}) => redefinePosition(clientX, clientY) }
         draggable
         >
-
+          <button onClick={ ({currentTarget}) => console.log(currentTarget) }>X</button>
       </header>
       <section>
         <div className="projects">

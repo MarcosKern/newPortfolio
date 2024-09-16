@@ -1,12 +1,15 @@
 .windowHeader {
+    position: relative;
     height: 2em;
     background-color: aliceblue;
+    overflow: hidden;
 }
 
 .Window {
-    position: relative;
+    position: absolute;
     border: 2px solid black;
     height: 20em;
     width: 40em;
     background-color: antiquewhite;
+    overflow: hidden;
 }

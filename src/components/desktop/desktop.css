@@ -11,6 +11,7 @@
     background-image:url(../../assets/layered-waves-haikei.svg);
     background-size: cover;
     display: flex;
+    overflow: hidden;
 }
 
 .icon {
