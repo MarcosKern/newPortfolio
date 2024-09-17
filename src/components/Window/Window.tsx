@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./window.css"
 
-export default function Window() {
+export default function Window(props: { windowType: any, deleteFunction: Function, keyNumber: number }) {
   const [position, setPosition] = useState({ x: 450, y: 300 })
 
   const redefinePosition = (pageX: number, pageY: number) => {
@@ -23,19 +23,9 @@ export default function Window() {
         onDrag={ ({clientX, clientY}) => redefinePosition(clientX, clientY) }
         draggable
         >
-          <button onClick={ ({currentTarget}) => console.log(currentTarget) }>X</button>
+          <p>{ props.windowType }</p>
+          <button onClick={ () => props.deleteFunction(props.keyNumber) }>X</button>
       </header>
-      <section>
-        <div className="projects">
-
-        </div>
-        <div className="projectDetails"> 
-
-        </div>
-      </section>
-      <footer>
-
-      </footer>
     </section>
   )
 }

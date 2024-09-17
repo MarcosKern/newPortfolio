@@ -17,14 +17,19 @@ export default function Taskbar() {
       const month = dateObject.getMonth()
       const year = dateObject.getFullYear()
 
-      const currentTime = `${hour}:${minute}`
-      const currentDate = `${day}/${(month + 1 <= 9) ? `0${month + 1}` : month + 1}/${year}`
+      const currentTime = `${acertionDate(hour)}:${acertionDate(minute)}`
+      const currentDate = `${acertionDate(day)}/${acertionDate(month + 1)}/${year}`
       
       setTime(currentTime)
       setFullDate(currentDate)
     }, 1000)
 
   }, [])
+
+  const acertionDate = (unity: number) => {
+    return (unity <= 9) ? `0${unity}` : unity
+  }
+
   return(
     <footer className="taskbar">
       <div></div>

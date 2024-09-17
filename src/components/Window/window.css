@@ -13,3 +13,7 @@
     background-color: antiquewhite;
     overflow: hidden;
 }
+
+.Window:hover {
+    z-index: 10;
+}
