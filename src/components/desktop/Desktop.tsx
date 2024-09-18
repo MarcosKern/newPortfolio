@@ -3,6 +3,7 @@ import Window from "../Window/Window.tsx"
 import "./desktop.css"
 import Taskbar from "../Taskbar/Taskbar.tsx"
 import myContext from "../Context/Context.tsx"
+import folderAsset from "../../assets/folderIcon.png";
 
 export default function Desktop() {
   const { renderWindow, setNewWindow } = useContext(myContext)
@@ -30,26 +31,26 @@ export default function Desktop() {
         <div
         className="icon"
         onDoubleClick={ () => newWindow("Projetos", windowKey) }>
-          <img src="" alt="" />
-          <p>open</p>
+          <img src={folderAsset} alt="" />
+          <p>Prikitos</p>
         </div>
         <div
         className="icon"
         onDoubleClick={ () => newWindow("Tecnologias", windowKey) }>
-          <img src="" alt="" />
-          <p>open</p>
+          <img src={folderAsset} alt="" />
+          <p>Tecnologias</p>
         </div>
         <div
         className="icon"
         onDoubleClick={ () => newWindow("Contatos", windowKey) }>
-          <img src="" alt="" />
-          <p>open</p>
+          <img src={folderAsset} alt="" />
+          <p>Contatos</p>
         </div>
         <div
         className="icon"
         onDoubleClick={ () => newWindow("Certificados", windowKey) }>
-          <img src="" alt="" />
-          <p>open</p>
+          <img src={folderAsset} alt="" />
+          <p>Certificados</p>
         </div>
       </main>
       <Taskbar />
