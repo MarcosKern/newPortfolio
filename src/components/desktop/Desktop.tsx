@@ -1,44 +1,53 @@
-import { ReactElement, useState } from "react"
+import { useContext, useState } from "react"
 import Window from "../Window/Window.tsx"
 import "./desktop.css"
 import Taskbar from "../Taskbar/Taskbar.tsx"
+import myContext from "../Context/Context.tsx"
 
 export default function Desktop() {
-  const [ renderWindow, setNewWindow ] = useState(Array<{
-    identifier: number,
-    render: ReactElement
-  }>)
+  const { renderWindow, setNewWindow } = useContext(myContext)
   const [ windowKey, setWindowKey ] = useState(0)
 
   const newWindow = (type: string, key: number) => {
-    const newWindow = renderWindow.concat({
+    const settingNewWindow = renderWindow.concat({
       identifier: key,
       render: <Window
-        windowType={`${type}${key}`}
+        windowType={type}
         key={windowKey}
-        deleteFunction={ () => deleteWindow(key)}
         keyNumber={key} />
       })
 
-    setNewWindow(newWindow)
+    setNewWindow(settingNewWindow)
     setWindowKey(windowKey + 1)
-  }
-
-  const deleteWindow = (key: number) => {
-    const del = renderWindow.filter((item) => item.identifier != key)
-    console.log(renderWindow.filter((item) => item.identifier != key))
-    setNewWindow(del)
   }
 
   return(
     <section className="desktopScreen">
       {
-        renderWindow && renderWindow.map((item) => item.render)
+        renderWindow && renderWindow.map((item: any) => item.render)
       }
       <main className="workArea">
         <div
         className="icon"
         onDoubleClick={ () => newWindow("Projetos", windowKey) }>
+          <img src="" alt="" />
+          <p>open</p>
+        </div>
+        <div
+        className="icon"
+        onDoubleClick={ () => newWindow("Tecnologias", windowKey) }>
+          <img src="" alt="" />
+          <p>open</p>
+        </div>
+        <div
+        className="icon"
+        onDoubleClick={ () => newWindow("Contatos", windowKey) }>
+          <img src="" alt="" />
+          <p>open</p>
+        </div>
+        <div
+        className="icon"
+        onDoubleClick={ () => newWindow("Certificados", windowKey) }>
           <img src="" alt="" />
           <p>open</p>
         </div>

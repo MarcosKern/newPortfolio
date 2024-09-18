@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import "./window.css"
+import myContext from "../Context/Context"
 
-export default function Window(props: { windowType: any, deleteFunction: Function, keyNumber: number }) {
+export default function Window(props: { windowType: any, keyNumber: number }) {
+  const { renderWindow, setNewWindow } = useContext(myContext)
   const [position, setPosition] = useState({ x: 450, y: 300 })
 
   const redefinePosition = (pageX: number, pageY: number) => {
@@ -11,6 +13,10 @@ export default function Window(props: { windowType: any, deleteFunction: Functio
         y: pageY
       })
     }
+  }
+
+  const deleteWindow = () => {
+    setNewWindow(renderWindow.filter((item: any) => item.identifier != props.keyNumber))
   }
 
   return(
@@ -24,7 +30,7 @@ export default function Window(props: { windowType: any, deleteFunction: Functio
         draggable
         >
           <p>{ props.windowType }</p>
-          <button onClick={ () => props.deleteFunction(props.keyNumber) }>X</button>
+          <button onClick={ () => deleteWindow() }>X</button>
       </header>
     </section>
   )
