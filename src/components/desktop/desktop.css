@@ -4,30 +4,44 @@
     background-color: #333333;
     height: 100dvh;
     overflow: hidden;
+    background-color: rgba(0, 13, 19, 0.938);
+    background-size: cover;
 }
 
 .workArea {
     flex: 1;
-    background-image:url(../../assets/layered-waves-haikei.svg);
-    background-size: cover;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    flex-wrap: wrap;
+    margin-right: auto;
 }
 
 .icon {
-    height: 86px;
-    width: 72px;
+    height: 7em;
+    width: 6em;
     margin: 1em;
-    border-radius: 5px;
+    gap: .5em;
+    border-radius: .7em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: white;
     font-family: sans-serif;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+}
+
+.icon:hover {
+    background-color: #0169f11c;
+    box-shadow: #0000004f 0px 0px 10px;
+}
+
+.iconSelected {
+    background-color: #0169f141;
+    box-shadow: #0000004f 0px 0px 10px;
 }
 
 .icon img {

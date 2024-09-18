@@ -30,13 +30,15 @@ export default function Desktop() {
       <main className="workArea">
         <div
         className="icon"
-        onDoubleClick={ () => newWindow("Projetos", windowKey) }>
+        onDoubleClick={ () => newWindow("Projetos", windowKey) }
+        >
           <img src={folderAsset} alt="" />
-          <p>Prikitos</p>
+          <p>Projetos</p>
         </div>
         <div
         className="icon"
-        onDoubleClick={ () => newWindow("Tecnologias", windowKey) }>
+        onDoubleClick={ () => newWindow("Tecnologias", windowKey) }
+        >
           <img src={folderAsset} alt="" />
           <p>Tecnologias</p>
         </div>
