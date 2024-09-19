@@ -1,8 +1,9 @@
 import { useContext, useState } from "react"
 import "./window.css"
 import myContext from "../Context/Context"
+import ProjectsWindow from "../Projects/ProjectsWindow"
 
-export default function Window(props: { windowType: any, keyNumber: number }) {
+export default function Window(props: { windowType: string, keyNumber: number }) {
   const { renderWindow, setNewWindow } = useContext(myContext)
   const [position, setPosition] = useState({ x: 450, y: 300 })
 
@@ -19,9 +20,18 @@ export default function Window(props: { windowType: any, keyNumber: number }) {
     setNewWindow(renderWindow.filter((item: any) => item.identifier != props.keyNumber))
   }
 
+  const setWindowType = (windowType: string) => {
+    switch (windowType) {
+      case "Projetos":
+        return (<ProjectsWindow/>)
+      default:
+        break;
+    }
+  }
+
   return(
     <section
-      className="Window"
+      className="window"
       onResize={ (e) => console.log(e) }
       style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>
       <header
@@ -29,9 +39,12 @@ export default function Window(props: { windowType: any, keyNumber: number }) {
         onDrag={ ({clientX, clientY}) => redefinePosition(clientX, clientY) }
         draggable
         >
-          <p>{ props.windowType }</p>
-          <button onClick={ () => deleteWindow() }>X</button>
+          <p className="windowName">{ props.windowType }</p>
+          <button onClick={ () => deleteWindow() } className="closeBtn">X</button>
       </header>
+      {
+        setWindowType(props.windowType)
+      }
     </section>
   )
 }

@@ -52,13 +52,6 @@
     cursor: pointer;
 }
 
-.windowHeader {
-    position: relative;
-    height: 2em;
-    background-color: aliceblue;
-    overflow: hidden;
-}
-
 .Window {
     position: absolute;
     border: 2px solid black;
