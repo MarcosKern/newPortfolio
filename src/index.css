@@ -1,9 +1,15 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition-delay: display .3s ;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-delay: display .3s ;
+  --JavaScript: #f1e05a;
+  --TypeScript: #3178c6;
+  --SCSS: #c6538c;
+  --CSS: #563d7c;
+  --HTML: #e34c26;
+  --Shell: #adff2f;
+}
 
 .isHidden {
     filter: opacity(0);

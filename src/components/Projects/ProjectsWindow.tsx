@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./projectsWindow.css"
 import callFetch from "../../services/callFetch";
+import { PieChart } from "react-minimal-pie-chart";
 
 export default function ProjectsWindow() {
   const [ getGithubApi, setGithubApi ] = useState(Array<any>)
@@ -28,17 +29,40 @@ export default function ProjectsWindow() {
     const response = getGithubApi.find((item) => item.id == id)
     const languages = await callFetch(response.languages_url)
     const languagesArray = Object.entries(languages)
+    const chartArray: Array<{ title: string, value: number, color: string }> = languagesArray
+      .map((language) => {return({ title: language[0], value: Number(language[1]), color: `var(--${language[0]})`}) })
+    console.log(chartArray)
     setCurrentRepo(
-      <div>
+      <div className="showDetails">
         <h2 className="projectName">{response.name.replaceAll("-", " ")}</h2>
-        <div className="languages">
+        {/* <span className="separator"></span> */}
+        <fieldset>
+          <legend>Tecnologias utilizadas</legend>
+          <section className="graph">
+            <PieChart
+              data={chartArray}
+              lineWidth={40}
+              animate
+              labelStyle={{fontFamily: "sans-serif", fontSize: ".5em"}}
+            />
+          </section>
+          <div className="languages">
+            {
+              languagesArray.map((item) => <p className="languageItem">
+                <span className={`language`} style={{ backgroundColor: `var(--${item[0]})`}}></span>
+                {`${item[0]}`}
+              </p>)
+            }
+          </div>
+        </fieldset>
+        {/* <span className="separator"></span> */}
+        <fieldset className="links">
+          <legend>Links de referencia</legend>
+          <a href={response.html_url} target="blank">Repositorio</a>
           {
-            languagesArray.map((item) => <p className="languageItem">
-              <span className={`${item[0]} language`}></span>
-              {`${item[0]}: ${item[1]}`}
-            </p>)
+            response.homepage && <a href={response.homepage} target="blank">Site</a>
           }
-        </div>
+        </fieldset>
       </div>
     )
   }
@@ -47,11 +71,13 @@ export default function ProjectsWindow() {
     <section className="projects">
       <nav>
         {
-          getGithubApi.map((repo) => {
+          getGithubApi.map((repo, index) => {
             return <section
+              key={index}
               className="selectRepo"
               onClick={ async () => getRepo(repo.id) }
             >
+              <img src="" alt="" />
               <p>{repo.name.replaceAll("-", " ")}</p>
             </section>
           })
