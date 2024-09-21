@@ -5,10 +5,10 @@
     color: white;
 }
 
-.separator {
-    background-color: white;
-    width: 130%;
-    height: 2px;
+.projectDetailPlaceholder {
+    text-align: center;
+    align-self: center;
+    width: 70%;
 }
 
 fieldset {
@@ -30,7 +30,11 @@ legend {
 
 .projects > nav {
     flex: 2;
+    display: flex;
     margin: .5em;
+    flex-wrap: wrap;
+    text-align: center;
+    overflow-y: auto;
 }
 
 .showDetails {

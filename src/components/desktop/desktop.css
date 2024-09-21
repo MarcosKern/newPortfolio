@@ -34,6 +34,12 @@
     -webkit-user-select: none;
 }
 
+.icon > p {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+}
+
 .icon:hover {
     background-color: #0169f11c;
     box-shadow: #0000004f 0px 0px 10px;

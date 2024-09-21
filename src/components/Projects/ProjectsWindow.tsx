@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import "./projectsWindow.css"
 import callFetch from "../../services/callFetch";
 import { PieChart } from "react-minimal-pie-chart";
+import fileIcon from "../../assets/fileIcon.png"
 
 export default function ProjectsWindow() {
   const [ getGithubApi, setGithubApi ] = useState(Array<any>)
-  const [ currentRepo, setCurrentRepo ] = useState(<h3>Selecione um projeto para ver mais informações.</h3>)
+  const [ currentRepo, setCurrentRepo ] = useState(<h2 className="projectDetailPlaceholder">Selecione um projeto para ver mais informações.</h2>)
 
   useEffect(() => {
     const url = 'https://api.github.com/users/MarcosKern/repos';
@@ -35,14 +36,13 @@ export default function ProjectsWindow() {
     setCurrentRepo(
       <div className="showDetails">
         <h2 className="projectName">{response.name.replaceAll("-", " ")}</h2>
-        {/* <span className="separator"></span> */}
         <fieldset>
           <legend>Tecnologias utilizadas</legend>
           <section className="graph">
             <PieChart
               data={chartArray}
               lineWidth={40}
-              animate
+              animate={true}
               labelStyle={{fontFamily: "sans-serif", fontSize: ".5em"}}
             />
           </section>
@@ -55,7 +55,6 @@ export default function ProjectsWindow() {
             }
           </div>
         </fieldset>
-        {/* <span className="separator"></span> */}
         <fieldset className="links">
           <legend>Links de referencia</legend>
           <a href={response.html_url} target="blank">Repositorio</a>
@@ -74,10 +73,11 @@ export default function ProjectsWindow() {
           getGithubApi.map((repo, index) => {
             return <section
               key={index}
-              className="selectRepo"
+              className="selectRepo icon"
               onClick={ async () => getRepo(repo.id) }
+              title={ `${repo.size} Kb` }
             >
-              <img src="" alt="" />
+              <img src={ fileIcon } alt="" className="projectIcon"/>
               <p>{repo.name.replaceAll("-", " ")}</p>
             </section>
           })
