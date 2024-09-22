@@ -1,0 +1,9 @@
+.stacks {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.stacks > a {
+    text-decoration: none;
+}

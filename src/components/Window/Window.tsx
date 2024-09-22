@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import "./window.css"
 import myContext from "../Context/Context"
 import ProjectsWindow from "../Projects/ProjectsWindow"
+import Stacks from "../Stacks/Stacks"
 
 export default function Window(props: { windowType: string, keyNumber: number }) {
   const { renderWindow, setNewWindow } = useContext(myContext)
@@ -24,6 +25,8 @@ export default function Window(props: { windowType: string, keyNumber: number })
     switch (windowType) {
       case "Projetos":
         return (<ProjectsWindow/>)
+      case "Tecnologias":
+        return (<Stacks/>)
       default:
         break;
     }
