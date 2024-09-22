@@ -32,16 +32,16 @@
 }
 
 .closeBtn {
-    box-shadow: inset 0px 0px 10px #00000027;
+    background-color: transparent;
     width: 4em;
     border: none;
-
     transition: all ease-in-out .2s;
+    color: white;
+    font-weight: bolder;
 }
 
 .closeBtn:hover {
     box-shadow: inset 0px 0px 10px #000000c5;
     cursor: pointer;
     background-color: #9b0000;
-    color: white;
 }
