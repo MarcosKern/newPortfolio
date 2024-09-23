@@ -4,6 +4,7 @@ import myContext from "../Context/Context"
 import ProjectsWindow from "../Projects/ProjectsWindow"
 import Stacks from "../Stacks/Stacks"
 import Contacts from "../Contacts/Contacts"
+import Certificates from "../Certificates/Certificates"
 
 export default function Window(props: { windowType: string, keyNumber: number }) {
   const { renderWindow, setNewWindow } = useContext(myContext)
@@ -30,6 +31,8 @@ export default function Window(props: { windowType: string, keyNumber: number })
         return (<Stacks/>)
       case "Contatos":
         return (<Contacts/>)
+      case "Certificados":
+        return (<Certificates/>)
       default:
         break;
     }
