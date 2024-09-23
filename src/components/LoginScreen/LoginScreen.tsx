@@ -36,7 +36,7 @@ function LoginScreen() {
                             alt="Perfil"
                             className="profileImage"
                         />
-                        <h1 className="user">Eduarda</h1>
+                        <h1 className="user">Marcos Vinicios</h1>
                         <input
                             type="password"
                             className="password"

@@ -8,7 +8,7 @@ import Certificates from "../Certificates/Certificates"
 
 export default function Window(props: { windowType: string, keyNumber: number }) {
   const { renderWindow, setNewWindow } = useContext(myContext)
-  const [position, setPosition] = useState({ x: 450, y: 300 })
+  const [position, setPosition] = useState({ x: 100, y: 100 })
 
   const redefinePosition = (pageX: number, pageY: number) => {
     if (pageX || pageY > 0) {
