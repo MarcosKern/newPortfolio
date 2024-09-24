@@ -5,7 +5,7 @@ import Taskbar from "../Taskbar/Taskbar.tsx"
 import myContext from "../Context/Context.tsx"
 import folderAsset from "../../assets/folderIcon.png";
 
-export default function Desktop() {
+function Desktop() {
   const { renderWindow, setNewWindow } = useContext(myContext)
   const [ windowKey, setWindowKey ] = useState(0)
 
@@ -59,3 +59,5 @@ export default function Desktop() {
     </section>
   )
 }
+
+export default Desktop;
