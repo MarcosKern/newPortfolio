@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Provider>
         <Routes>
-          <Route path="/" element={<LoginScreen />} />
-          <Route path="/desktop" element={<Desktop />} />
+          {/* <Route path="/" element={<LoginScreen />} />
+          <Route path="/desktop" element={<Desktop />} /> */}
         </Routes>
       </Provider>
     </BrowserRouter>
