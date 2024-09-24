@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import "./loginScreen.css"
 import Loading from "../Loading/Loading.tsx"
-import duda from "../../images/image.png"
 
 const passwordMaxLength = 6;
 
@@ -32,7 +31,7 @@ function LoginScreen() {
                     className={`login ${hidden && 'isHidden'}`}
                     >
                         <img
-                            src={ duda }
+                            src="https://avatars.githubusercontent.com/u/98438915?v=4"
                             alt="Perfil"
                             className="profileImage"
                         />
