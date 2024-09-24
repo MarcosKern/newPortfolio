@@ -1,7 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import LoginScreen from './components/LoginScreen/LoginScreen.tsx';
-import Desktop from "../src/components/Desktop/Desktop.tsx";
+import { BrowserRouter, Routes } from "react-router-dom";
 
 import './App.css'
 import Provider from "./components/Context/Provider";
