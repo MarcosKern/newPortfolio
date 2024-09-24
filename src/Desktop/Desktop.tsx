@@ -1,9 +1,9 @@
 import { useContext, useState } from "react"
-import Window from "../Window/Window.tsx"
+import Window from "../components/Window/Window.tsx"
 import "./desktop.css"
-import Taskbar from "../Taskbar/Taskbar.tsx"
-import myContext from "../Context/Context.tsx"
-import folderAsset from "../../assets/folderIcon.png";
+import Taskbar from "../components/Taskbar/Taskbar.tsx"
+import myContext from "../components/Context/Context.tsx"
+import folderAsset from "../assets/folderIcon.png";
 
 function Desktop() {
   const { renderWindow, setNewWindow } = useContext(myContext)
