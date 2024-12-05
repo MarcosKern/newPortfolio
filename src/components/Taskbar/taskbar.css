@@ -1,10 +1,13 @@
 .taskbar {
     height: 3em;
-    background-color: #4040ee;
+    background-color: #08080cb9;
     z-index: 3;
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    box-shadow: 0 0 10px #000000c9;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .date {

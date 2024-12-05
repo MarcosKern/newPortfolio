@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import "./loginScreen.css"
@@ -8,18 +8,25 @@ const passwordMaxLength = 6;
 
 function LoginScreen() {
     const [passKey, setPassKey] = useState(false);
-    const [hidden, setHidden] = useState(false)
+    const [hidden, setHidden] = useState(false);
+    const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
 
-
-    const changeScreen = (pass: any) => {
-        const {value} = pass
-        if (value.length === passwordMaxLength) {
-            setHidden(true)
-            setTimeout(() => setPassKey(true), 300)
-            setTimeout(() => navigate("/desktop"), 2000)
+    useEffect(() => {
+        for(let i = 0; i <= 6; i++) {
+            setTimeout(() => setPassword(password + '*'), 300);
+            if(password.length == passwordMaxLength) {
+                changeScreen();
+                break;
+            }
         }
+    })
+
+    const changeScreen = () => {
+        setHidden(true)
+        setTimeout(() => setPassKey(true), 300)
+        setTimeout(() => navigate("/desktop"), 2000)
     }
 
     return(
@@ -40,8 +47,8 @@ function LoginScreen() {
                             type="password"
                             className="password"
                             placeholder="senha"
+                            value={password}
                             maxLength={6}
-                            onInput={ ({target}) => changeScreen(target) }
                         />
                     </div>
             }

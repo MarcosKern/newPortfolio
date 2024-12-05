@@ -5,6 +5,7 @@ import ProjectsWindow from "../Projects/ProjectsWindow"
 import Stacks from "../Stacks/Stacks"
 import Contacts from "../Contacts/Contacts"
 import Certificates from "../Certificates/Certificates"
+import Curriculo from "../curriculo/Curriculo"
 
 export default function Window(props: { windowType: string, keyNumber: number }) {
   const { renderWindow, setNewWindow } = useContext(myContext)
@@ -13,7 +14,7 @@ export default function Window(props: { windowType: string, keyNumber: number })
   const redefinePosition = (pageX: number, pageY: number) => {
     if (pageX || pageY > 0) {
       setPosition({
-        x: (pageX),
+        x: pageX,
         y: pageY
       })
     }
@@ -33,6 +34,8 @@ export default function Window(props: { windowType: string, keyNumber: number })
         return (<Contacts/>)
       case "Certificados":
         return (<Certificates/>)
+      case "Curriculo":
+        return (<Curriculo/>)
       default:
         break;
     }
@@ -45,7 +48,7 @@ export default function Window(props: { windowType: string, keyNumber: number })
       style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>
       <header
         className="windowHeader"
-        onDrag={ ({clientX, clientY}) => redefinePosition(clientX, clientY) }
+        onDrag={ ({ clientX, clientY }) => redefinePosition(clientX, clientY) }
         draggable
         >
           <p className="windowName">{ props.windowType }</p>

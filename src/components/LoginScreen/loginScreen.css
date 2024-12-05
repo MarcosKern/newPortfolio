@@ -24,7 +24,7 @@
     height: 150px;
     width: 150px;
     background-color: #4646a3;
-    filter: drop-shadow(10px black);
+    filter: drop-shadow(0 0 10px #000000dc);
     align-content: center;
     border-radius: 15px;
     transition: linear .3s;
