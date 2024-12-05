@@ -5,6 +5,7 @@ import Taskbar from "../components/Taskbar/Taskbar.tsx"
 import myContext from "../components/Context/Context.tsx"
 import folderAsset from "../assets/folderIcon.png";
 import fileAsset from "../assets/fileIcon.png";
+import curriculo from "../assets/curriculo/Marcos Vinicios.pdf"
 
 function Desktop() {
   const { renderWindow, setNewWindow } = useContext(myContext)
@@ -29,13 +30,14 @@ function Desktop() {
         renderWindow && renderWindow.map((item: any) => item.render)
       }
       <main className="workArea">
-        <div
+        <a
         className="icon"
-        onDoubleClick={ () => newWindow("Curriculo", windowKey) }
+        href={ curriculo }
+        target="blank"
         >
           <img src={fileAsset} alt="" />
           <p>Curriculo</p>
-        </div>
+        </a>
         <div
         className="icon"
         onDoubleClick={ () => newWindow("Projetos", windowKey) }

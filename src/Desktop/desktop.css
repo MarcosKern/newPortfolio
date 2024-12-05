@@ -33,6 +33,7 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    text-decoration: none;
 }
 
 .icon > p {

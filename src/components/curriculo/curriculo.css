@@ -1,9 +1,0 @@
-.curriculo {
-    flex: 1;
-    margin: .5em;
-    display: flex;
-    justify-content: center;
-    background-color: #e7e7e7;
-    box-shadow: inset 0px 0px 10px #00000069;
-    border-radius: 5px;
-}
