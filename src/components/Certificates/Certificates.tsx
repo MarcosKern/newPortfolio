@@ -4,6 +4,7 @@ import BackEnd from "../../assets/certificados/Back-end.webp"
 import Fundamentos from "../../assets/certificados/Fundamentos.webp"
 import Ciencia from "../../assets/certificados/Ciencia.webp"
 import fileAsset from "../../assets/fileIcon.png"
+import BackEndAlura from "../../assets/certificados/imersão-back-end.png"
 import { useState } from "react"
 
 const certificados = [
@@ -26,6 +27,11 @@ const certificados = [
     name: "Ciência da Computação",
     image: Ciencia,
     link: "https://www.credential.net/7932e690-9451-4ba4-942e-f19028b99de9#gs.f20qly"
+  },
+  {
+    name: "Imersão back-end Alura",
+    image: BackEndAlura,
+    link: "https://cursos.alura.com.br/immersion/certificate/user/vkg-marcos"
   },
 ]
 
